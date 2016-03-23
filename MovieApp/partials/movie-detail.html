@@ -1,0 +1,47 @@
+<div class="jumbotron">
+     <div class="row">
+       <div class="col-sm-4">
+        <img ng-src="{{img}}" class="movie">
+       </div>
+
+      <div class="col-sm-8">
+         <h1>{{movie.name}}</h1>
+         <p>{{movie.description}}</p>
+
+          <h2>Reviews</h2>
+         <ul  class="reviews">
+        <li ng-repeat="review in movie.reviews">
+          By: {{review.author}}
+          {{review.body}}
+          Votes: {{review.upvotes}}
+        </li>
+      </ul>
+          
+
+         <div>   
+              <div >
+                <table class = "reviews">
+                  <thead>
+                    <th>Author</th>
+                    <th>Body</th>
+                    <th>Upvotes</th>
+                    <th ></th>
+                    <th ng-if="movie.reviews.length > 0" ></th>
+                  </thead>
+
+                  <tbody ng-repeat="review in movie.reviews" >
+
+                    <tr >
+                      <td>{{review.author}} </td>
+                      <td>{{review.body}}</td>
+                      <td>{{review.upvotes}}</td>
+                    </tr>
+                  </tbody>
+
+                </table>
+              </div>
+            </div>
+       </div>
+     </div>      
+     </div>
+    </div>    

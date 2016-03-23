@@ -1,9 +1,9 @@
    body {
-      padding-top: 20px;
+      
       background-color: darkred;
     }
 
-    .phones {
+    .movies {
       list-style: none;
     }
 
@@ -15,29 +15,31 @@
       width: 100px;
     }
 
-    .phones li {
-      height: 110px;
+    .movies li {
+      height: 170px;
       padding-top: 15px;
+  
+      
     }
 
        /** Detail View **/
-    img.phone {
-      width: 400px;
+    img.movie {
+      width: 100%;
     }
 
-    ul.phone-thumbs {
+    ul.movie-thumbs {
       margin: 0;
       list-style: none;
     }
 
-    ul.phone-thumbs li {
+    ul.movie-thumbs li {
       border: 1px solid black;
       display: inline-block;
       margin: 1em;
       background-color: white;
     }
 
-    ul.phone-thumbs img {
+    ul.movie-thumbs img {
       height: 100px;
       width: 100px;
       padding: 1em;
@@ -58,6 +60,8 @@
 
     .jumbotron {
       background-color: white;
+      padding-top: 10px;
+      font-size: 5px;
     }
 
     .search-options {
@@ -67,5 +71,73 @@
 
       .query-text {
       color:black;
-      font-weight:bold;
+      font-weight:bolder;
+      width: 100%;
+
     }
+
+
+    /** css for nav bar **/
+
+    .banner{
+        width: 100%;
+    }
+
+    .home-text{
+      font-size: 5px;
+    }
+
+.jumbotron p{
+  font-size: 10px;
+}
+
+.movie-item{
+  padding: 5px;
+  background-color:  #222222;
+  margin-bottom:10px;
+
+}
+.movie-item img{
+  width: 100%;
+}
+
+.btn{
+  color: white;
+  font-weight: bolder;
+  width: 100%;
+  background-color:  #222222;
+  border-color: #222222;
+}
+
+.btn-info{
+  color: white;
+  font-weight: bolder;
+  width: 100%;
+  background-color:  #222222;
+  border-color:  #222222;
+}
+
+
+.movie-form{
+  width: 100%;
+  font-weight: bolder;
+  color: black;
+}
+
+.movie-form h4{
+  color: white;
+  font-weight: bolder;
+}
+
+.reviews{
+
+ width: 100%;
+ font-size: 16px;
+}
+
+.action-button{
+  width:30%;
+}
+
+
+

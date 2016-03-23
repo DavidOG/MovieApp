@@ -1,36 +1,58 @@
-var phonesApp = angular.module('phoneCatApp', ['ngRoute']);
+var moviesApp = angular.module('movieCatApp', ['ngRoute']);
 
-    phonesApp.config(['$routeProvider',
+
+    moviesApp.config(['$routeProvider',
       function($routeProvider) {
         $routeProvider
-          .when('/phones', {
-            templateUrl: 'partials/phone-list.html',
-            controller: 'PhoneListCtrl'
+          .when('/movies', {
+            templateUrl: 'partials/movie-list.html',
+            controller: 'movieListCtrl'
           })
-          .when('/phones/:phoneId', {
-            templateUrl: 'partials/phone-detail.html',
-            controller: 'PhoneDetailCtrl'
+          .when('/movies-info', {
+            templateUrl: 'partials/movie-list-info.html',
+            controller: 'movieListCtrl'
+          })
+           .when('/', {
+            templateUrl: 'partials/front-page.html'
+          })
+            .when('/about', {
+            templateUrl: 'partials/about.html'
+          })
+          .when('/movies/:movieId', {
+            templateUrl: 'partials/movie-detail.html',
+            controller: 'movieDetailCtrl'
           })
           .otherwise({
-            redirectTo: '/phones'
+            redirectTo: '/movies'
           });
       }]);
 
-    phonesApp.controller('PhoneListCtrl', ['$scope', 'PhoneService',
-          function($scope, PhoneService) {
-             PhoneService.getPhones().success(function(data) {
-                   $scope.phones = data
+    moviesApp.controller('movieListCtrl', ['$scope', 'movieService',
+          function($scope, movieService) {
+             movieService.getmovies().success(function(data) {
+                   $scope.movies = data
                  })
+              $scope.addMovie = function(){
+          $scope.movies.push({
+            name: $scope.newMovie.name,
+            id: $scope.newMovie.id,
+            imageUrl: $scope.newMovie.imageUrl,
+            age: $scope.addMovie.age
+ 
+          })
+          $scope.newMovie = {} 
+        }
              $scope.orderProp = 'age';
-          }])
 
-    phonesApp.controller('PhoneDetailCtrl', 
-         ['$scope', '$location', '$routeParams', 'PhoneService', 
-         function($scope, $location, $routeParams, PhoneService) {
-             PhoneService.getPhone($routeParams.phoneId)
+          }]) 
+
+    moviesApp.controller('movieDetailCtrl', 
+         ['$scope', '$location', '$routeParams', 'movieService', 
+         function($scope, $location, $routeParams, movieService) {
+             movieService.getmovie($routeParams.movieId)
                 .success(function(data) {
-                   $scope.phone = data
-                   $scope.img = $scope.phone.images[0]
+                   $scope.movie = data
+                   $scope.img = $scope.movie.images[0]
                    })
                 .error(function(err) {
                     $location.path('./pnones') 
@@ -40,13 +62,13 @@ var phonesApp = angular.module('phoneCatApp', ['ngRoute']);
                }
       }])
 
-          phonesApp.factory('PhoneService', ['$http' , function($http){
+          moviesApp.factory('movieService', ['$http' , function($http){
             var api = {
-                getPhones : function() {
-                    return $http.get('phones/phones.json')            
+                getmovies : function() {
+                    return $http.get('movies/movies.json')            
                 }, 
-                getPhone : function(id) {  // NEW
-                     return $http.get('phones/' + id + '.json')
+                getmovie : function(id) {  // NEW
+                     return $http.get('movies/' + id + '.json')
                 }
             }
             return api
