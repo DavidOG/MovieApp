@@ -1,0 +1,16 @@
+[ 
+    {
+        "age": 0, 
+        "id": "batman-v-superman", 
+        "imageUrl": "img/phones/batman-v-superman.jpg", 
+        "name": "Batman Vs Superman", 
+        "snippet": "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb)."
+    }, 
+    {
+        "age": 1, 
+        "id": "motorola-xoom", 
+        "imageUrl": "img/phones/motorola-xoom.0.jpg", 
+        "name": "Hail Ceaser", 
+        "snippet": "The Next, Next Generation\n\nExperience the future with MOTOROLA XOOM, the world's first tablet powered by Android 3.0 (Honeycomb)."
+    }
+]
