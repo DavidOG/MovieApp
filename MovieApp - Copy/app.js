@@ -27,7 +27,7 @@ var moviesApp = angular.module('movieCatApp', ['ngRoute']);
           });
       }]);
 
-    moviesApp.controller('movieListCtrl', ['$scope', 'movieService',
+    moviesApp.controller('movieListCtrl', ['$rootScope', 'movieService',
           function($scope, movieService) {
              movieService.getmovies().success(function(data) {
                    $scope.movies = data
@@ -46,7 +46,7 @@ var moviesApp = angular.module('movieCatApp', ['ngRoute']);
 
           }]) 
 
-   moviesApp.controller('movieDetailCtrl', 
+    moviesApp.controller('movieDetailCtrl', 
          ['$scope', '$location', '$routeParams', 'movieService', 
          function($scope, $location, $routeParams, movieService) {
              movieService.getmovie($routeParams.movieId)
