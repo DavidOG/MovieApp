@@ -11,8 +11,8 @@
       </select>
           <br>
       <br>
-      <a href="#/movies-info" class="btn btn-info" role="button">Alternative Search</a>
-      
+      <a href="#/movies" class="btn btn-info" role="button">Alternative Search</a>
+
       <br>
       <form name="movieForm" novalidate ng-submit="addMovie()"
                 style="margin-top:30px;" class="movie-form">
@@ -45,23 +45,16 @@
               <br>
     </div>
 
-       <div class="col-md-10">
-       <div class="row">
-    <div ng-repeat="movie in movies | filter:{name: query } | orderBy:orderProp">
-        <div class="clearfix" ng-if="$index % 3 == 0"></div>
-        <div class="col-sm-4">
-          <div class="movie-item">
-            <a href="#/movies/{{movie.id}}" class="btn btn-info" role="button">{{movie.name}}</a>
-            <br>
-            <a href="#/movies/{{movie.id}}"><img ng-src="{{movie.imageUrl}}"></a>
-            </div>
-        </div>
-    </div>
-    
-</div>
-    </div>
+     <div class="col-md-10">
 
-
+     <ul  class="movies">
+        <li ng-repeat="movie in movies | filter:{name: query } | orderBy:orderProp" class="thumbnail">
+           <a href="#/movies/{{movie.id}}" class="thumb"><img ng-src="{{movie.imageUrl}}"></a>
+           <a href="#/movies/{{movie.id}}">{{movie.name}}</a>
+           <p>{{movie.snippet}}</p>
+        </li>
+      </ul>
+    </div>
    
 
 
