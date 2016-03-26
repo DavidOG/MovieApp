@@ -118,7 +118,7 @@ moviesApp.constant('FBMSG','https://reviewitproject.firebaseio.com/movies');
 
                 result.then(function(userData){
                   console.log("User logged in successfully with uid: ", userData.uid);
-                  $window.location.href = '/';
+                  $window.location.href = '/movieapp/#/movies';
                 },function(error){
                   console.log(error);
                 })
@@ -149,6 +149,38 @@ moviesApp.constant('FBMSG','https://reviewitproject.firebaseio.com/movies');
              $scope.setImage = function(img) {
                   $scope.img = img
                }
+
+            $scope.deleteReview = function(review) {
+            review.state = "deleted";
+           }
+
+           $scope.undoDelete = function(review) {
+           review.state = "normal";
+        }
+
+            $scope.confirmDelete = function(index) {
+                if ($scope.movie.reviews[index].state == "deleted") {
+                  $scope.movie.reviews.splice(index, 1)       
+                }
+            }
+
+            $scope.editReview = function(review) {
+              review.oldAuthor= review.author;
+              review.oldBody = review.body;
+             
+              review.state = "edit";
+            }
+
+
+
+             $scope.saveReview = function(review) {
+              review.state = "normal";
+            }
+            $scope.cancelEdit = function(review) {
+               review.author = review.oldAuthor;
+              review.body = review.oldBody;
+              review.state = "normal";
+            }
       }])
 
           moviesApp.factory('movieService', ['$http' , function($http){
@@ -168,6 +200,7 @@ moviesApp.constant('FBMSG','https://reviewitproject.firebaseio.com/movies');
             var authFactory = {};
             var ref = new Firebase(FBMSG);
             var auth = $firebaseAuth(ref);
+
 
             authFactory.createUser = function(email,password){
             return auth.$createUser({

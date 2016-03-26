@@ -4,56 +4,72 @@
         "id": "batman-v-superman", 
         "imageUrl": "img/phones/batman-v-superman.jpg", 
         "name": "Batman Vs Superman", 
-        "snippet": "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb)."
+        "snippet": "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb).",
+        "released": "01/01/2014"
+    
     }, 
     {
         "age": 1, 
         "id": "hail-ceaser", 
         "imageUrl": "img/phones/hail-ceaser.jpg", 
         "name": "Hail Ceaser", 
-        "snippet": "The Next, Next Generation\n\nExperience the future with MOTOROLA XOOM, the world's first tablet powered by Android 3.0 (Honeycomb)."
+        "snippet": "The Next, Next Generation\n\nExperience the future with MOTOROLA XOOM, the world's first tablet powered by Android 3.0 (Honeycomb).",
+        "released": "04/01/2014"
     },
     {
         "age": 0, 
-        "id": "batman-v-superman", 
-        "imageUrl": "img/phones/batman-v-superman.jpg", 
-        "name": "Batman Vs Superman", 
-        "snippet": "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb)."
+        "id": "shrek", 
+        "imageUrl": "img/phones/shrek.jpg", 
+        "name": "Shrek", 
+        "snippet": "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb).",
+        "released": "01/01/2008"
+    
     }, 
     {
         "age": 0, 
-        "id": "hail-ceaser", 
-        "imageUrl": "img/phones/hail-ceaser.jpg", 
-        "name": "Hail Ceaser", 
-        "snippet": "The Next, Next Generation\n\nExperience the future with MOTOROLA XOOM, the world's first tablet powered by Android 3.0 (Honeycomb)."
+        "id": "harry-potter8", 
+        "imageUrl": "img/phones/harry-potter.jpg", 
+        "name": "Harry Potter and the deathly hallows", 
+        "snippet": "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb).",
+        "released": "10/01/2014"
+    
     },
-    {
+      {
         "age": 0, 
-        "id": "batman-v-superman", 
-        "imageUrl": "img/phones/batman-v-superman.jpg", 
-        "name": "Batman Vs Superman", 
-        "snippet": "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb)."
-    }, 
-    {
-        "age": 0, 
-        "id": "hail-ceaser", 
-        "imageUrl": "img/phones/hail-ceaser.jpg", 
-        "name": "Hail Ceaser", 
-        "snippet": "The Next, Next Generation\n\nExperience the future with MOTOROLA XOOM, the world's first tablet powered by Android 3.0 (Honeycomb)."
+        "id": "harry-potter2", 
+        "imageUrl": "img/phones/harry-potter2.jpg", 
+        "name": "Harry Potter and the chamber of secrets", 
+        "snippet": "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb).",
+        "released": "10/01/2002"
+    
     },
-    {
-        "age": 1, 
-        "id": "batman-v-superman", 
-        "imageUrl": "img/phones/batman-v-superman.jpg", 
-        "name": "Batman Vs Superman", 
-        "snippet": "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb)."
+        {
+        "age": 0, 
+        "id": "inception", 
+        "imageUrl": "img/phones/inception.jpg", 
+        "name": "Inception", 
+        "snippet": "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb).",
+        "released": "01/01/2008"
+    
     }, 
     {
         "age": 0, 
-        "id": "hail-ceaser", 
-        "imageUrl": "img/phones/hail-ceaser.jpg", 
-        "name": "Hail Ceaser", 
-        "snippet": "The Next, Next Generation\n\nExperience the future with MOTOROLA XOOM, the world's first tablet powered by Android 3.0 (Honeycomb)."
+        "id": "toy-story", 
+        "imageUrl": "img/phones/toy-story.jpg", 
+        "name": "Toy Story", 
+        "snippet": "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb).",
+        "released": "10/01/2014"
+    
+    },
+      {
+        "age": 0, 
+        "id": "pulp-fiction", 
+        "imageUrl": "img/phones/pulp-fiction.jpg", 
+        "name": "Pulp Fiction", 
+        "snippet": "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb).",
+        "released": "10/01/2002"
+    
     }
 ]
+
 

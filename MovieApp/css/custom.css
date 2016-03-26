@@ -22,9 +22,15 @@
       
     }
 
+    .center {
+     float: none;
+     margin-left: auto;
+     margin-right: auto;
+}
+
        /** Detail View **/
     img.movie {
-      width: 100%;
+      width: 300px;
     }
 
     ul.movie-thumbs {
@@ -138,6 +144,24 @@
   margin: none;
 }
 
+.reviewsTable{
+
+background-color: white;
+color: black;
+width: 100%;
+}
+
+td{
+
+padding: 15px;
+}
+
+th{
+
+padding: 15px;
+}
+
+
 .action-button{
   width:30%;
 }
@@ -148,6 +172,8 @@
       width: 100%;
 
     }
+
+
 
 
 

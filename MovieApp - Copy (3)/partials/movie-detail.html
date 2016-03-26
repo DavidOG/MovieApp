@@ -1,0 +1,44 @@
+<div class="jumbotron">
+     <div class="row">
+       <div class="col-sm-4">
+        <img ng-src="{{img}}" class="movie">
+       </div>
+
+      <div class="col-sm-8">
+         <h1>{{movie.name}}</h1>
+         <p>{{movie.description}}</p>
+
+          <h2>Reviews ({{movie.reviews.length}})</h2>
+
+          
+
+           <ul  class="reviews">
+        <li ng-repeat="review in movie.reviews">
+           <b>{{review.author}}</b>
+           <p>{{review.body}}</p>
+        </li>
+      </ul>
+      <div class="col-sm-6">
+        <h2>Write a Review</h2>
+       <form name="reviewForm" novalidate ng-submit="addReview()"
+                class="movie-form">
+                <div class="form-group">
+                  <input type="text" name="author" 
+                    class="form-control" placeholder="Username" 
+                    ng-model="newReview.author" 
+                    ng-required ng-minlength="3" ng-maxlength="100"></input>
+                </div>
+                <div class="form-group">
+
+                  <textarea class="form-control" type="text" cols="86" rows ="10" name="body"  ng-model="newReview.body"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary"
+                    ng-disabled="reviewForm.$pristine || (reviewForm.$dirty && reviewForm.$invalid) ">
+                Post</button>
+              </form>
+            </div>          
+
+       </div>
+     </div>      
+     </div>
+    </div>    
