@@ -70,26 +70,32 @@ A simple diagram showing the app's component design, in particular controllers a
 
 ###UI Design.
 
-. . . . . Screenshots of app's views (see example below) with appropriate captions (excluding user regeneration and login views) . . . . . . . 
+![][image3]
+![][image4]
 
 
 
 ###Routing.
 
 . . . . List each route supported and state the associated view . . . . . 
-+ /foos - displays all published foos
-+ /foos/:id - detail view of a particular foo (:id)
-+ etc
-+ etc
++ /movies - displays all published foos
++ /movies/:id - detail view of a particular foo (:id) and all associated reviews aswell as the create review form
++ /login
++ /logout
++ /register
++ /about
++ / - this is the home page
 
 ###Extra features
 
-. . . . . Briefly explain any non-standard features, functional or non-functional (e.g. user registration, authentication) developed for the app . . . . . .  
-
+The combination of Angular and Firebase provides a three-way data binding between the HTML, the JavaScript, and the Firebase database
+for user authentification. By using the firebase I can authenticate a user and received detailed error results about incorrect passwords or if the user already exists. Firebase passes my app a session token once a user has authentificated so that the sessiion state is handles on the client side as opposed to the server. To end a session I needed to simply delete this token.
+Firebase made authetification really easy and combining it with my own authentification factory made for a secure application.
 ###Independent learning.
 
-. . . . . State the non-standard aspects of Angular (or other related technologies) that you researched and applied in this assignment . . . . .  
 
 [image1]: ./model.png
 [image2]: ./design.png
+[image3]: ./screen1.png
+[image4]: ./screen2.png
 
