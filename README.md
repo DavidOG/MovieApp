@@ -4,13 +4,11 @@
 Name: ... David O'Grady
 
 ###Overview.
-...... A statement of the app concept and objectives (about 1/2 page) ........
 
 ReviewIT the movie review app!
 I wanted to create an application that would allow users to post there reviews about popular movies. Users can also post new movies to review. I wanted a netflix-esque home screen that would allow users to search for there movies on the movies home while the page was dynamically searching the list of movies based on there search query. I wanted to authentify/register users using firebase. This would allow me to limit certain aspects of the web application to signed in users only. Once a users has found a specific movie. They are able to write a review about it. There are a lot of small things I would of liked to have included in the app to make more a "real world" application but didnt get a chance to due to time contraints. For future iterations of the project I would work on connecting the user model to those movies and reviews. I would also allow users to rate the movie and then show the average rating for each movie. I have worked with other languages before and I while I found creating the controllers/models more complicated and time consuming, I can see the many benefits of using zangular for front end web application development.
 
  . . . . . List of user features (excluding user registration and authentication) . . . . 
- 
  + Create Movie
  + Write review about movie
  + delete review
