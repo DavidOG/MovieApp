@@ -1,7 +1,7 @@
 # MovieApp
 #Assignment 1 - AngularJS app.
 
-Name: ... David O'Grady
+Name: David O'Grady
 
 ###Overview.
 
