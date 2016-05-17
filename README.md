@@ -86,11 +86,30 @@ A simple diagram showing the app's component design, in particular controllers a
 + /about
 + / - this is the home page
 
+
+## Web API Endpoint Reference
+
+This API can you be used to perform crud functionality on all the movies and reviews stored in my mongo database.
+
+
+| HTTP Verb & Path |  Description |
+| -- | -- |
+| GET: /api/movies |return a list of movie |
+| GET: /api/movies/:movie_id |return a specific movie and its reviews |
+| POST: /api/movies |add a new movie |
+| PUT: /api/movies/:movie_id | update a movie and its reviews|
+| DELETE: /api/movies/:movie_id | delete a movie |
+| DELETE: /api/movies/:movie_id/reviews/:review_id | delete a review |
+| POST: /api/movies/:movie_id/reviews |add a new review to an existing movie |
+
 ###Extra features
 
 The combination of Angular and Firebase provides a three-way data binding between the HTML, the JavaScript, and the Firebase database
 for user authentification. By using the firebase I can authenticate a user and received detailed error results about incorrect passwords or if the user already exists. Firebase passes my app a session token once a user has authentificated so that the sessiion state is handles on the client side as opposed to the server. To end a session I needed to simply delete this token.
 Firebase made authetification really easy and combining it with my own authentification factory made for a secure application.
+
+I have also used an unofficial imdb api to get the imdb rating for each movie. This is done by providing the imdbid when creating the movie and then going a get request to return a movie object from imbd and then the rating is extracted from this object.
+
 ###Independent learning.
 
 
