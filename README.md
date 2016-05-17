@@ -93,7 +93,7 @@ This API can you be used to perform crud functionality on all the movies and rev
 
 
 | HTTP Verb & Path |  Description |
-| -- | -- |
+| --- | --- |
 | GET: /api/movies |return a list of movie |
 | GET: /api/movies/:movie_id |return a specific movie and its reviews |
 | POST: /api/movies |add a new movie |
