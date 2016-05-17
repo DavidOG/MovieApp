@@ -91,8 +91,9 @@ moviesApp.constant('FBMSG','https://reviewitproject.firebaseio.com/movies');
         var movie = {
             name: $scope.newMovie.name,
             imageUrl: $scope.newMovie.imageUrl,
-            age: $scope.newMovie.age,
-            imdbID:  $scope.newMovie.imdbID
+            imdbID:  $scope.newMovie.imdbID,
+            snippet: $scope.newMovie.snippet,
+            released: $scope.newMovie.released
             }
        movieService.addmovie(movie)
           .success(function(newMovie) {

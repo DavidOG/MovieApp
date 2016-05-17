@@ -6,18 +6,21 @@
         <img ng-src="{{movie.imageUrl}}" class="movie">
        </div>
 
-      <div class="col-sm-8" style="padding-bottom: 30px; padding-top: 30px">
+      <div class="col-sm-4" style="padding-bottom: 30px; padding-top: 30px">
         
-         <p >{{movie.snippet}}</p>
+         
          <p style="font-size:large;" >IMDB Rating: {{movie.imdbRating}}</p>
          <p style="font-size:large;">Our Rating: {{movie.rating}}</p>
-          <div class="col-sm-4" >
+         <h3>Plot</h3>
+         <p >{{movie.snippet}}</p>
+          <div class="col-sm-8" >
           <a href="#/movies" class="btn btn-danger" role="button" ng-click="deletemovie(movie)" >Delete Movie</a>
           </div>
         </br>
 
        </div>
        <div class="col-sm-4">
+        <h3>Please Write a Review</h3>
        <form name="reviewForm" novalidate ng-submit="addReview()"
                 class="movie-form">
                 <div class="form-group">

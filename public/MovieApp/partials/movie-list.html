@@ -9,6 +9,7 @@
         <option value="name">Alphabetical</option>
         <option value="age">Newest</option>
         <option value="rating">Rating</option>
+        <option value="released">Released</option>
       </select>
           <br>
       <br>
@@ -36,10 +37,15 @@
                   ng-model="newMovie.imdbID"> </input>
                 </div>
                  <div class="form-group">
-                  <input type="text" name="age"
-                  class="form-control" placeholder="age"
-                  ng-model="newMovie.age" ng-required> </input>
+                <div class="form-group">
+                  <input type="text" name="released"
+                  class="form-control" placeholder="released"
+                  ng-model="newMovie.released"> </input>
                 </div>
+
+                  <textarea class="form-control" type="text" cols="280" rows ="3" name="plot" placeholder="Plot..." ng-model="newMovie.snippet"></textarea>
+                </div>
+
                 <button type="submit" class="btn btn-primary"
                     ng-disabled="movieForm.$pristine || (movieForm.$dirty && movieForm.$invalid) ">
                 Post</button>
