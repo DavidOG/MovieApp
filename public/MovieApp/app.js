@@ -185,9 +185,16 @@ moviesApp.constant('FBMSG','https://reviewitproject.firebaseio.com/movies');
 
             $scope.confirmDelete = function(index) {
                 if ($scope.movie.reviews[index].state == "deleted") {
-                  movieService.deletereview($routeParams.movieId,$routeParams.reviewId )
+                  movieService.deletereview($routeParams.movieId,$scope.movie.reviews[index]._id )
                 .success(function(data) {
                 $scope.movie.reviews.splice(index, 1) 
+                     movieService.getmovie($routeParams.movieId)
+                .success(function(data) {
+                   $scope.movie = data
+                   })
+                .error(function(err) {
+                    $location.path('./movies') 
+                  });
                    })      
                 }
             }
@@ -212,7 +219,17 @@ moviesApp.constant('FBMSG','https://reviewitproject.firebaseio.com/movies');
 
              $scope.saveReview = function(review) {
               review.state = "normal";
-            }
+          movieService.update($routeParams.movieId,$scope.movie)
+            movieService.getmovie($routeParams.movieId)
+                .success(function(data) {
+                   $scope.movie = data
+                   })
+                .error(function(err) {
+                    $location.path('./movies') 
+                  });
+
+          }
+
             $scope.cancelEdit = function(review) {
                review.author = review.oldAuthor;
               review.body = review.oldBody;
@@ -239,6 +256,9 @@ moviesApp.constant('FBMSG','https://reviewitproject.firebaseio.com/movies');
      }
      , deletereview : function(movie_id, review_id) {  // NEW
                      return $http.delete('http://localhost:8000/api/movies/' + movie_id + '/reviews/' + review_id)
+                }
+          , update : function(movie_id, movie) {  // NEW
+                     return $http.put('http://localhost:8000/api/movies/' + movie_id, movie)
                 }
             }
             return api

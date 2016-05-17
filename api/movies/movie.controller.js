@@ -8,26 +8,32 @@ exports.index = function(req, res) {
           // Connect to the db
    movie.find(function (err, movies) {
     if(err) { return handleError(res, err); }
+
+
+       
+
     return res.json(200, movies);
   });
 
 } ;
 
   exports.show = function(req, res) {
-      movie.findById(req.params.id, function (err, post) {
-          if(err) { return handleError(res, err); }
-          return res.json(200, post);
-      });
-  } ;
-
-
-  exports.show_rating = function(req, res) {
       movie.findById(req.params.id, function (err, movie) {
           if(err) { return handleError(res, err); }
-        var overall_rating = movie.rating
-          return res.json(200, overall_rating);
+
+           if (typeof movie.reviews.length !== "undefined"){
+            var sum = 0;
+    for( var i = 0; i < movie.reviews.length; i++ ){
+    sum += movie.reviews[i].rating //don't forget to add the base
+    }
+            movie.rating = sum/movie.reviews.length
+          }
+
+
+          return res.json(200, movie);
       });
   } ;
+
  
 
 // Creates a new movie in datastore.
@@ -51,10 +57,13 @@ exports.update = function(req, res) {
     var updated = _.merge(movie, req.body);
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
-      return res.json(200, movie);
+      return res.json(200, updated);
     });
   });
 };
+
+
+
 
 // delete an existing movie in datastore.
 exports.delete = function(req, res) {
@@ -71,8 +80,19 @@ exports.delete = function(req, res) {
   // Add a comment to a post
   exports.delete_review = function(req, res) {
      movie.findById(req.params.movie_id, function (err, movie) {
+        console.log(req.params.review_id);
         
-            movie.reviews.splice(movie.reviews.indexOf(req.params.review_id),1)
+      
+        for (var i = 0; i < movie.reviews.length; i++) { 
+          console.log(movie.reviews[i]._id);
+          console.log(req.params.review_id);
+    if(movie.reviews[i]._id == req.params.review_id){
+       movie.reviews.splice(i,1)
+      console.log(i);
+    }
+}
+           
+
             movie.save(function (err) {
               if(err) { return handleError(res, err); }
               return res.send(204);
@@ -92,11 +112,14 @@ exports.delete = function(req, res) {
                 rating: req.body.rating
              }
             movie.reviews.push(review);
+
+            if (typeof movie.reviews.length !== "undefined"){
             var sum = 0;
     for( var i = 0; i < movie.reviews.length; i++ ){
     sum += movie.reviews[i].rating //don't forget to add the base
     }
             movie.rating = sum/movie.reviews.length
+          }
 
             movie.save(function (err) {
               if(err) { return handleError(res, err); }

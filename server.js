@@ -28,3 +28,7 @@ app.listen(config.port)
 
 // Put a friendly message on the terminal
 console.log('Express app listening on %d', config.port);
+
+
+console.log('test');
+

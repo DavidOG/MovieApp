@@ -47,6 +47,7 @@
                   <thead>
                     <th>Name</th>
                     <th>Review</th>
+                    <th>Rating</th>
              
                   </thead>
 
@@ -61,6 +62,9 @@
           <td>
             <input type="text" class="form-control" ng-model="review.body" />
           </td>
+            <td style="width: 100px;">
+            <input type="number" class="form-control" ng-model="review.rating" min="0" max="10" step="0.5" />
+          </td>
           <td>
             <input type="button" class="btn btn-success" ng-click="saveReview(review)" value="Save" />
           </td>
@@ -74,6 +78,7 @@
         <tr class="danger" ng-switch-when="deleted">
           <td>{{review.author}}</td>
           <td>{{review.body}}</td>
+          <td>{{review.rating}}</td>
           <td>
             <input type="button" class="btn btn-danger" ng-click="confirmDelete($index)"  value="Confirm" />
           </td>
@@ -86,6 +91,7 @@
         <tr ng-switch-default>
           <td>{{review.author}}</td>
           <td>{{review.body}}</td>
+          <td>{{review.rating}}</td>
           <td>
             <input type="button" class="btn btn-primary" ng-click="editReview(review)" value="Edit" />
           </td>
