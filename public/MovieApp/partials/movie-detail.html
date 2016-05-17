@@ -1,7 +1,7 @@
 <div class="jumbotron">
      <div class="row">
 
-       <div class="col-sm-2">
+       <div class="col-sm-3">
        <h3> {{movie.name}} </h3>
         <img ng-src="{{movie.imageUrl}}" class="movie">
        </div>
@@ -9,8 +9,8 @@
       <div class="col-sm-8" style="padding-bottom: 30px; padding-top: 30px">
         
          <p >{{movie.snippet}}</p>
-         <p >IMDB Rating: {{movie.imdbRating}}</p>
-         <p >Our Rating: {{movie.rating}}</p>
+         <p style="font-size:large;" >IMDB Rating: {{movie.imdbRating}}</p>
+         <p style="font-size:large;">Our Rating: {{movie.rating}}</p>
           <div class="col-sm-4" >
           <a href="#/movies" class="btn btn-danger" role="button" ng-click="deletemovie(movie)" >Delete Movie</a>
           </div>

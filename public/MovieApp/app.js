@@ -172,6 +172,14 @@ moviesApp.constant('FBMSG','https://reviewitproject.firebaseio.com/movies');
                movieService.getmovie($routeParams.movieId)
                 .success(function(data) {
                    $scope.movie = data
+
+                             movieService.getimdbinfo( $scope.movie.imdbID)
+                .success(function(data) {
+                   console.log(data.imdbRating)
+                    $scope.movie.imdbRating = data.imdbRating
+
+                   
+                   })
                    })
                 .error(function(err) {
                     $location.path('./movies') 
@@ -200,6 +208,13 @@ moviesApp.constant('FBMSG','https://reviewitproject.firebaseio.com/movies');
                      movieService.getmovie($routeParams.movieId)
                 .success(function(data) {
                    $scope.movie = data
+                             movieService.getimdbinfo( $scope.movie.imdbID)
+                .success(function(data) {
+                   console.log(data.imdbRating)
+                    $scope.movie.imdbRating = data.imdbRating
+
+                   
+                   })
                    })
                 .error(function(err) {
                     $location.path('./movies') 
@@ -232,6 +247,14 @@ moviesApp.constant('FBMSG','https://reviewitproject.firebaseio.com/movies');
             movieService.getmovie($routeParams.movieId)
                 .success(function(data) {
                    $scope.movie = data
+
+                             movieService.getimdbinfo( $scope.movie.imdbID)
+                .success(function(data) {
+                   console.log(data.imdbRating)
+                    $scope.movie.imdbRating = data.imdbRating
+
+                   
+                   })
                    })
                 .error(function(err) {
                     $location.path('./movies') 
