@@ -16,6 +16,7 @@ var movieSchema = new Schema({
   name: String,
   snippet: String,
   released: Date,
+  imdbID: String,
   reviews : [reviewSchema],
   rating: Number
 });

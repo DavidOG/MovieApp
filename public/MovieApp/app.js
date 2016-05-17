@@ -91,7 +91,8 @@ moviesApp.constant('FBMSG','https://reviewitproject.firebaseio.com/movies');
         var movie = {
             name: $scope.newMovie.name,
             imageUrl: $scope.newMovie.imageUrl,
-            age: $scope.addMovie.age
+            age: $scope.newMovie.age,
+            imdbID:  $scope.newMovie.imdbID
             }
        movieService.addmovie(movie)
           .success(function(newMovie) {
@@ -134,6 +135,14 @@ moviesApp.constant('FBMSG','https://reviewitproject.firebaseio.com/movies');
              movieService.getmovie($routeParams.movieId)
                 .success(function(data) {
                    $scope.movie = data
+                         movieService.getimdbinfo( $scope.movie.imdbID)
+                .success(function(data) {
+                   console.log(data.imdbRating)
+                    $scope.movie.imdbRating = data.imdbRating
+
+                   
+                   })
+
                    })
                 .error(function(err) {
                     $location.path('./movies') 
@@ -259,6 +268,9 @@ moviesApp.constant('FBMSG','https://reviewitproject.firebaseio.com/movies');
                 }
           , update : function(movie_id, movie) {  // NEW
                      return $http.put('http://localhost:8000/api/movies/' + movie_id, movie)
+                },
+            getimdbinfo : function(id) {  // NEW
+                     return $http.get('http://www.omdbapi.com/?i=' + id)
                 }
             }
             return api

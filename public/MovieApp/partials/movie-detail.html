@@ -9,7 +9,8 @@
       <div class="col-sm-8" style="padding-bottom: 30px; padding-top: 30px">
         
          <p >{{movie.snippet}}</p>
-         <p >Overall Rating {{movie.rating}}</p>
+         <p >IMDB Rating: {{movie.imdbRating}}</p>
+         <p >Our Rating: {{movie.rating}}</p>
           <div class="col-sm-4" >
           <a href="#/movies" class="btn btn-danger" role="button" ng-click="deletemovie(movie)" >Delete Movie</a>
           </div>
