@@ -72,6 +72,7 @@ A simple diagram showing the app's component design, in particular controllers a
 
 ![][image3]
 ![][image4]
+![][image5]
 
 
 
@@ -117,4 +118,6 @@ I have also used an unofficial imdb api to get the imdb rating for each movie. T
 [image2]: ./design.png
 [image3]: ./screen1.png
 [image4]: ./screen2.png
+[image5]: ./screen4.png
+
 
